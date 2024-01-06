@@ -1,6 +1,6 @@
 package com.cs.vsu.pereslavtsev_oleg.comanser_chess.Player;
 
-import org.example.Figure.FigureInterface;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Figure.FigureInterface;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,8 @@
 package com.cs.vsu.pereslavtsev_oleg.comanser_chess.Figure;
 
-import org.example.Game.Board;
-import org.example.Game.Cell;
-import org.example.moving.*;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Game.Board;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Game.Cell;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.moving.*;
 
 public class Pawn extends Figure {
     public Pawn(Cell cell, boolean isWhite, Board board) {

@@ -1,7 +1,7 @@
 package com.cs.vsu.pereslavtsev_oleg.comanser_chess.Game;
 
-import org.example.Player.PlayerInterface;
-import org.example.moving.MovingInterface;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Player.PlayerInterface;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.moving.MovingInterface;
 
 import java.util.Stack;
 

@@ -1,9 +1,9 @@
 package com.cs.vsu.pereslavtsev_oleg.comanser_chess;
 
-import org.example.Game.Board;
-import org.example.Game.GameState;
-import org.example.Player.Bot;
-import org.example.Player.PlayerOnBoard;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Game.Board;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Game.GameState;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Player.Bot;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Player.PlayerOnBoard;
 
 import javax.swing.*;
 

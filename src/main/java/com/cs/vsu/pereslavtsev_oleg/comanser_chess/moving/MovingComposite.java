@@ -1,7 +1,7 @@
 package com.cs.vsu.pereslavtsev_oleg.comanser_chess.moving;
 
-import org.example.Figure.FigureInterface;
-import org.example.Game.Coordinates;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Figure.FigureInterface;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Game.Coordinates;
 
 import java.util.Arrays;
 

@@ -1,8 +1,8 @@
 package com.cs.vsu.pereslavtsev_oleg.comanser_chess.Figure;
 
-import org.example.Game.Board;
-import org.example.Game.Cell;
-import org.example.moving.MovingInterface;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Game.Board;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Game.Cell;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.moving.MovingInterface;
 
 public class Bishop extends Figure{
     public Bishop(Cell cell, boolean isWhite, Board board) {

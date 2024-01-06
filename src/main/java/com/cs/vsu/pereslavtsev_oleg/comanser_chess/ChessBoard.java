@@ -1,9 +1,9 @@
 package com.cs.vsu.pereslavtsev_oleg.comanser_chess;
 
-import org.example.Figure.*;
-import org.example.Game.*;
-import org.example.Player.PlayerOnBoard;
-import org.example.moving.MovingInterface;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Figure.*;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Game.*;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Player.PlayerOnBoard;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.moving.MovingInterface;
 
 import javax.swing.*;
 import java.awt.*;

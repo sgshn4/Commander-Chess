@@ -1,6 +1,6 @@
 package com.cs.vsu.pereslavtsev_oleg.comanser_chess.moving;
-import org.example.Figure.FigureInterface;
-import org.example.Game.Cell;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Figure.FigureInterface;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Game.Cell;
 
 public class DefaultMoving extends Moving{
     private final int destination;

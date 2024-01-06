@@ -1,8 +1,8 @@
 package com.cs.vsu.pereslavtsev_oleg.comanser_chess.Figure;
 
-import org.example.Game.Board;
-import org.example.Game.Cell;
-import org.example.moving.*;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Game.Board;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Game.Cell;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.moving.*;
 
 public abstract class Figure implements FigureInterface{
     protected Cell cell;

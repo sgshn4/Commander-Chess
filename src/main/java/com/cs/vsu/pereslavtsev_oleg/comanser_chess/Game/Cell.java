@@ -1,6 +1,6 @@
 package com.cs.vsu.pereslavtsev_oleg.comanser_chess.Game;
 
-import org.example.Figure.FigureInterface;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Figure.FigureInterface;
 
 public class Cell {
     public static final int UP = 0;

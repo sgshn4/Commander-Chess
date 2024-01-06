@@ -1,7 +1,7 @@
 package com.cs.vsu.pereslavtsev_oleg.comanser_chess.Player;
 
-import org.example.Figure.FigureInterface;
-import org.example.moving.MovingInterface;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.Figure.FigureInterface;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.moving.MovingInterface;
 
 import java.util.List;
 

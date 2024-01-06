@@ -1,7 +1,7 @@
 package com.cs.vsu.pereslavtsev_oleg.comanser_chess.Player;
 
-import org.example.ChessBoard;
-import org.example.moving.MovingInterface;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.ChessBoard;
+import com.cs.vsu.pereslavtsev_oleg.comanser_chess.moving.MovingInterface;
 
 public class PlayerOnBoard extends Player {
     private ChessBoard board;
