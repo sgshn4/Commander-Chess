@@ -8,19 +8,21 @@ import java.util.List;
 
 public class Militiaman extends Figure {
 
-    private static class MilitiamanFabric implements FabricInterface {
-        @Override
-        public String getSymbol() {
-            return "Militiaman";
+    private static class MilitiamanFabric extends AbstractFabricInterface {
+
+        public MilitiamanFabric(boolean isRed, String symbol) {
+            super(isRed, symbol);
         }
 
         @Override
-        public Figure createFigure(Point p, boolean isRed) {
-            return new Militiaman(p, isRed);
+        public Figure createFigure(Point p) {
+            return new Militiaman(p, isRed());
         }
     }
 
-    public static final FabricInterface FACTORY = new MilitiamanFabric();
+
+    public static final FabricInterface FACTORY_BLUE = new MilitiamanFabric(false, "M");
+    public static final FabricInterface FACTORY_RED = new MilitiamanFabric(true, "m");
 
     public Militiaman(Point point, boolean isRed) {
         super(point, isRed);

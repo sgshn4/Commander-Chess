@@ -8,19 +8,20 @@ import java.util.List;
 
 public class Artillery extends Figure {
 
-    private static class ArtilleryFabric implements FabricInterface {
-        @Override
-        public String getSymbol() {
-            return "Artillery";
+    private static class ArtilleryFabric extends AbstractFabricInterface {
+
+        public ArtilleryFabric(boolean isRed, String symbol) {
+            super(isRed, symbol);
         }
 
         @Override
-        public Figure createFigure(Point p, boolean isRed) {
-            return new Artillery(p, isRed);
+        public Figure createFigure(Point p) {
+            return new Artillery(p, isRed());
         }
     }
 
-    public static final FabricInterface FACTORY = new ArtilleryFabric();
+    public static final FabricInterface FACTORY_BLUE = new ArtilleryFabric(false, "A");
+    public static final FabricInterface FACTORY_RED = new ArtilleryFabric(true, "a");
 
     public Artillery(Point point, boolean isRed) {
         super(point, isRed);

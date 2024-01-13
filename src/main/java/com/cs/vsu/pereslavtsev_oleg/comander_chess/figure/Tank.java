@@ -8,19 +8,21 @@ import java.util.List;
 
 public class Tank extends Figure {
 
-    private static class TankFabric implements FabricInterface {
-        @Override
-        public String getSymbol() {
-            return "Tank";
+    private static class TankFabric extends AbstractFabricInterface {
+
+        public TankFabric(boolean isRed, String symbol) {
+            super(isRed, symbol);
         }
 
         @Override
-        public Figure createFigure(Point p, boolean isRed) {
-            return new Tank(p, isRed);
+        public Figure createFigure(Point p) {
+            return new Tank(p, isRed());
         }
     }
 
-    public static final FabricInterface FACTORY = new TankFabric();
+
+    public static final FabricInterface FACTORY_BLUE = new TankFabric(false, "T");
+    public static final FabricInterface FACTORY_RED = new TankFabric(true, "t");
 
     public Tank(Point point, boolean isRed) {
         super(point, isRed);

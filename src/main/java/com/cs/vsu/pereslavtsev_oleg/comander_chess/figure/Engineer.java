@@ -8,19 +8,20 @@ import java.util.List;
 
 public class Engineer extends Figure {
 
-    private static class EngineerFabric implements FabricInterface {
-        @Override
-        public String getSymbol() {
-            return "Engineer";
+    private static class EngineerFabric extends AbstractFabricInterface {
+
+        public EngineerFabric(boolean isRed, String symbol) {
+            super(isRed, symbol);
         }
 
         @Override
-        public Figure createFigure(Point p, boolean isRed) {
-            return new Engineer(p, isRed);
+        public Figure createFigure(Point p) {
+            return new Engineer(p, isRed());
         }
     }
 
-    public static final FabricInterface FACTORY = new EngineerFabric();
+    public static final FabricInterface FACTORY_BLUE = new EngineerFabric(false, "E");
+    public static final FabricInterface FACTORY_RED = new EngineerFabric(true, "e");
 
     public Engineer(Point point, boolean isRed) {
         super(point, isRed);

@@ -1,6 +1,10 @@
 package com.cs.vsu.pereslavtsev_oleg.comander_chess.game;
 
+import com.cs.vsu.pereslavtsev_oleg.comander_chess.figure.AirDefense;
 import com.cs.vsu.pereslavtsev_oleg.comander_chess.figure.Figure;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class Game {
 
@@ -10,7 +14,7 @@ public abstract class Game {
     private static boolean isRedTurn;
 
     public static void init() {
-        board = new Board();
+
     }
 
     public static Board getBoard() {

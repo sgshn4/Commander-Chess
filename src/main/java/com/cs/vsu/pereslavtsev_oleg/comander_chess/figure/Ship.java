@@ -8,19 +8,21 @@ import java.util.List;
 
 public class Ship extends Figure {
 
-    private static class ShipFabric implements FabricInterface {
-        @Override
-        public String getSymbol() {
-            return "Ship";
+    private static class ShipFabric extends AbstractFabricInterface {
+
+        public ShipFabric(boolean isRed, String symbol) {
+            super(isRed, symbol);
         }
 
         @Override
-        public Figure createFigure(Point p, boolean isRed) {
-            return new Ship(p, isRed);
+        public Figure createFigure(Point p) {
+            return new Ship(p, isRed());
         }
     }
 
-    public static final FabricInterface FACTORY = new ShipFabric();
+
+    public static final FabricInterface FACTORY_BLUE = new ShipFabric(false, "S");
+    public static final FabricInterface FACTORY_RED = new ShipFabric(true, "s");
 
     public Ship(Point point, boolean isRed) {
         super(point, isRed);

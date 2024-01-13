@@ -8,19 +8,21 @@ import java.util.List;
 
 public class AirDefense extends Figure {
 
-    private static class AirDefenseFabric implements FabricInterface {
-        @Override
-        public String getSymbol() {
-            return "AirDefence";
+    private static class AirDefenseFabric extends AbstractFabricInterface {
+
+        public AirDefenseFabric(boolean isRed, String symbol) {
+            super(isRed, symbol);
         }
 
         @Override
-        public Figure createFigure(Point p, boolean isRed) {
-            return new AirDefense(p, isRed);
+        public Figure createFigure(Point p) {
+            return new AirDefense(p, isRed());
         }
     }
 
-    public static final FabricInterface FACTORY = new AirDefenseFabric();
+
+    public static final FabricInterface FACTORY_BLUE = new AirDefenseFabric(false, "AD");
+    public static final FabricInterface FACTORY_RED = new AirDefenseFabric(true, "ad");
 
     public AirDefense(Point point, boolean isRed) {
         super(point, isRed);

@@ -15,9 +15,21 @@ public class DrawPanel extends JPanel {
     private GameMap gameMap;
     private Board board;
 
+
     public DrawPanel() {
         gameMap = new GameMap(0, 0);
-        board = new Board();
+        String[][] map =  {{"", "", "", "", "", "", "", "", "", ""},
+                {"", "", "", "", "", "", "", "", "", ""},
+                {"", "", "", "", "", "", "", "", "", ""},
+                {"", "", "", "", "", "", "", "", "", ""},
+                {"", "", "", "", "", "", "", "", "", ""},
+                {"", "", "", "", "", "", "", "", "", ""},
+                {"", "", "", "", "", "", "", "", "", ""},
+                {"", "", "", "", "", "", "", "", "", ""},
+                {"", "", "", "", "", "", "", "", "", ""},
+                {"", "", "", "", "", "", "", "", "", ""},
+                {"", "", "", "", "", "", "", "", "", ""}};
+        board = new Board(xxx);
 
         addMouseListener(new MouseAdapter() {
             @Override

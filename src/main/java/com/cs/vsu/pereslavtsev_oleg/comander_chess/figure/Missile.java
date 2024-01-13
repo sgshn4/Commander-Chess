@@ -8,23 +8,26 @@ import java.util.List;
 
 public class Missile extends Figure {
 
-    private static class MissileFabric implements FabricInterface {
-        @Override
-        public String getSymbol() {
-            return "Missile";
+    private static class MissileFabric extends AbstractFabricInterface {
+
+        public MissileFabric(boolean isRed, String symbol) {
+            super(isRed, symbol);
         }
 
         @Override
-        public Figure createFigure(Point p, boolean isRed) {
-            return new Missile(p, isRed);
+        public Figure createFigure(Point p) {
+            return new Missile(p, isRed());
         }
     }
+
+
+    public static final FabricInterface FACTORY_BLUE = new MissileFabric(false, "MI");
+    public static final FabricInterface FACTORY_RED = new MissileFabric(true, "mi");
 
     public Missile(Point point, boolean isRed) {
         super(point, isRed);
     }
 
-    public static final FabricInterface FACTORY = new MissileFabric();
 
     @Override
     public List<Point> getAvailableMovements() {

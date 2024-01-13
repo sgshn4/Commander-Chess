@@ -7,19 +7,21 @@ import java.util.List;
 
 public class Commander extends Figure {
 
-    private static class CommanderFabric implements FabricInterface {
-        @Override
-        public String getSymbol() {
-            return "Commander";
+    private static class CommanderFabric extends AbstractFabricInterface {
+
+        public CommanderFabric(boolean isRed, String symbol) {
+            super(isRed, symbol);
         }
 
         @Override
-        public Figure createFigure(Point p, boolean isRed) {
-            return new Commander(p, isRed);
+        public Figure createFigure(Point p) {
+            return new Commander(p, isRed());
         }
     }
 
-    public static final FabricInterface FACTORY = new CommanderFabric();
+
+    public static final FabricInterface FACTORY_BLUE = new CommanderFabric(false, "C");
+    public static final FabricInterface FACTORY_RED = new CommanderFabric(true, "c");
 
     public Commander(Point point, boolean isRed) {
         super(point, isRed);

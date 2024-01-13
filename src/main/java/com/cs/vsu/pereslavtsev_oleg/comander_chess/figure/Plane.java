@@ -8,19 +8,21 @@ import java.util.List;
 
 public class Plane extends Figure {
 
-    private static class PlaneFabric implements FabricInterface {
-        @Override
-        public String getSymbol() {
-            return "Plane";
+    private static class PlaneFabric extends AbstractFabricInterface {
+
+        public PlaneFabric(boolean isRed, String symbol) {
+            super(isRed, symbol);
         }
 
         @Override
-        public Figure createFigure(Point p, boolean isRed) {
-            return new Plane(p, isRed);
+        public Figure createFigure(Point p) {
+            return new Plane(p, isRed());
         }
     }
 
-    public static final FabricInterface FACTORY = new PlaneFabric();
+
+    public static final FabricInterface FACTORY_BLUE = new PlaneFabric(false, "P");
+    public static final FabricInterface FACTORY_RED = new PlaneFabric(true, "p");
 
     public Plane(Point point, boolean isRed) {
         super(point, isRed);
