@@ -11,7 +11,7 @@ public class Tank extends Figure {
     private static class TankFabric implements FabricInterface {
         @Override
         public String getSymbol() {
-            return null;
+            return "Tank";
         }
 
         @Override
@@ -19,6 +19,8 @@ public class Tank extends Figure {
             return new Tank(p, isRed);
         }
     }
+
+    public static final FabricInterface FACTORY = new TankFabric();
 
     public Tank(Point point, boolean isRed) {
         super(point, isRed);
@@ -28,13 +30,13 @@ public class Tank extends Figure {
     public List<Point> getAvailableMovements() {
         int x = getPoint().getX();
         int y = getPoint().getY();
-        List<Point> aviablePoints = new ArrayList<>(Arrays.asList(
+        List<Point> availablePoints = new ArrayList<>(Arrays.asList(
                 new Point(x, y - 2), //up
                 new Point(x, y + 2), // down
                 new Point(x - 2, y), // left
                 new Point(x + 2, y) // right
         ));
-        return aviablePoints;
+        return availablePoints;
     }
 
     @Override

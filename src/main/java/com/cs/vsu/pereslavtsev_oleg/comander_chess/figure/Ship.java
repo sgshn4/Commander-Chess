@@ -11,7 +11,7 @@ public class Ship extends Figure {
     private static class ShipFabric implements FabricInterface {
         @Override
         public String getSymbol() {
-            return null;
+            return "Ship";
         }
 
         @Override
@@ -19,6 +19,8 @@ public class Ship extends Figure {
             return new Ship(p, isRed);
         }
     }
+
+    public static final FabricInterface FACTORY = new ShipFabric();
 
     public Ship(Point point, boolean isRed) {
         super(point, isRed);
@@ -28,7 +30,7 @@ public class Ship extends Figure {
     public List<Point> getAvailableMovements() {
         int x = getPoint().getX();
         int y = getPoint().getY();
-        List<Point> aviablePoints = new ArrayList<>(Arrays.asList(
+        List<Point> availablePoints = new ArrayList<>(Arrays.asList(
                 new Point(x, y - 4), //up
                 new Point(x, y + 4), // down
                 new Point(x - 4, y), // left
@@ -38,7 +40,7 @@ public class Ship extends Figure {
                 new Point(x - 4, y - 4), // up-right
                 new Point(x + 4, y + 4) // down-right
         ));
-        return aviablePoints;
+        return availablePoints;
     }
 
     @Override

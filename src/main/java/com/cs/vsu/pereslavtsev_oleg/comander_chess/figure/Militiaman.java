@@ -11,7 +11,7 @@ public class Militiaman extends Figure {
     private static class MilitiamanFabric implements FabricInterface {
         @Override
         public String getSymbol() {
-            return null;
+            return "Militiaman";
         }
 
         @Override
@@ -19,6 +19,8 @@ public class Militiaman extends Figure {
             return new Militiaman(p, isRed);
         }
     }
+
+    public static final FabricInterface FACTORY = new MilitiamanFabric();
 
     public Militiaman(Point point, boolean isRed) {
         super(point, isRed);
@@ -28,7 +30,7 @@ public class Militiaman extends Figure {
     public List<Point> getAvailableMovements() {
         int x = getPoint().getX();
         int y = getPoint().getY();
-        List<Point> aviablePoints = new ArrayList<>(Arrays.asList(
+        List<Point> availablePoints = new ArrayList<>(Arrays.asList(
                 new Point(x, y - 1), //up
                 new Point(x, y + 1), // down
                 new Point(x - 1, y), // left
@@ -38,7 +40,7 @@ public class Militiaman extends Figure {
                 new Point(x - 1, y - 1), // up-right
                 new Point(x + 1, y + 1) // down-right
         ));
-        return aviablePoints;
+        return availablePoints;
     }
 
     @Override

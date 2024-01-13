@@ -11,7 +11,7 @@ public class Missile extends Figure {
     private static class MissileFabric implements FabricInterface {
         @Override
         public String getSymbol() {
-            return null;
+            return "Missile";
         }
 
         @Override
@@ -24,11 +24,13 @@ public class Missile extends Figure {
         super(point, isRed);
     }
 
+    public static final FabricInterface FACTORY = new MissileFabric();
+
     @Override
     public List<Point> getAvailableMovements() {
         int x = getPoint().getX();
         int y = getPoint().getY();
-        List<Point> aviablePoints = new ArrayList<>(Arrays.asList(
+        List<Point> availablePoints = new ArrayList<>(Arrays.asList(
                 new Point(x, y - 2), //up
                 new Point(x, y + 2), // down
                 new Point(x - 2, y), // left
@@ -38,7 +40,7 @@ public class Missile extends Figure {
                 new Point(x - 1, y - 1), // up-right
                 new Point(x + 1, y + 1) // down-right
         ));
-        return aviablePoints;
+        return availablePoints;
     }
 
     @Override

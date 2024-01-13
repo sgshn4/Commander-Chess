@@ -11,7 +11,7 @@ public class Artillery extends Figure {
     private static class ArtilleryFabric implements FabricInterface {
         @Override
         public String getSymbol() {
-            return null;
+            return "Artillery";
         }
 
         @Override
@@ -19,6 +19,8 @@ public class Artillery extends Figure {
             return new Artillery(p, isRed);
         }
     }
+
+    public static final FabricInterface FACTORY = new ArtilleryFabric();
 
     public Artillery(Point point, boolean isRed) {
         super(point, isRed);
@@ -28,7 +30,7 @@ public class Artillery extends Figure {
     public List<Point> getAvailableMovements() {
         int x = getPoint().getX();
         int y = getPoint().getY();
-        List<Point> aviablePoints = new ArrayList<>(Arrays.asList(
+        List<Point> availablePoints = new ArrayList<>(Arrays.asList(
                 new Point(x, y - 3), //up
                 new Point(x, y + 3), // down
                 new Point(x - 3, y), // left
@@ -38,7 +40,7 @@ public class Artillery extends Figure {
                 new Point(x - 3, y - 3), // up-right
                 new Point(x + 3, y + 3) // down-right
         ));
-        return aviablePoints;
+        return availablePoints;
     }
 
     @Override

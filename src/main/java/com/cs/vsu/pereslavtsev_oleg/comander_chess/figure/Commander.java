@@ -10,7 +10,7 @@ public class Commander extends Figure {
     private static class CommanderFabric implements FabricInterface {
         @Override
         public String getSymbol() {
-            return null;
+            return "Commander";
         }
 
         @Override
@@ -18,6 +18,8 @@ public class Commander extends Figure {
             return new Commander(p, isRed);
         }
     }
+
+    public static final FabricInterface FACTORY = new CommanderFabric();
 
     public Commander(Point point, boolean isRed) {
         super(point, isRed);
@@ -32,15 +34,15 @@ public class Commander extends Figure {
     public List<Point> getAvailableMovements() {
         int x = getPoint().getX();
         int y = getPoint().getY();
-        List<Point> aviablePoints = new ArrayList<>();
+        List<Point> availablePoints = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             if (x != i && i < 10) {
-                aviablePoints.add(new Point(i, y));
+                availablePoints.add(new Point(i, y));
                 if (y != i) {
-                    aviablePoints.add(new Point(x, i));
+                    availablePoints.add(new Point(x, i));
                 }
             }
         }
-        return aviablePoints;
+        return availablePoints;
     }
 }

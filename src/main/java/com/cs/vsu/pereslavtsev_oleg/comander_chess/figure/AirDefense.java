@@ -11,7 +11,7 @@ public class AirDefense extends Figure {
     private static class AirDefenseFabric implements FabricInterface {
         @Override
         public String getSymbol() {
-            return null;
+            return "AirDefence";
         }
 
         @Override
@@ -19,6 +19,8 @@ public class AirDefense extends Figure {
             return new AirDefense(p, isRed);
         }
     }
+
+    public static final FabricInterface FACTORY = new AirDefenseFabric();
 
     public AirDefense(Point point, boolean isRed) {
         super(point, isRed);
@@ -28,13 +30,13 @@ public class AirDefense extends Figure {
     public List<Point> getAvailableMovements() {
         int x = getPoint().getX();
         int y = getPoint().getY();
-        List<Point> aviablePoints = new ArrayList<>(Arrays.asList(
+        List<Point> availablePoints = new ArrayList<>(Arrays.asList(
                 new Point(x, y - 4), //up
                 new Point(x, y + 4), // down
                 new Point(x - 4, y), // left
                 new Point(x + 4, y) // right
         ));
-        return aviablePoints;
+        return availablePoints;
     }
 
     @Override

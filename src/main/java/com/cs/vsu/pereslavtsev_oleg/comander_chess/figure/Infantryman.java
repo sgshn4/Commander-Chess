@@ -11,7 +11,7 @@ public class Infantryman extends Figure {
     private static class InfantryFabric implements FabricInterface {
         @Override
         public String getSymbol() {
-            return null;
+            return "Infantry";
         }
 
         @Override
@@ -35,12 +35,12 @@ public class Infantryman extends Figure {
     public List<Point> getAvailableMovements() {
         int x = getPoint().getX();
         int y = getPoint().getY();
-        List<Point> aviablePoints = new ArrayList<>(Arrays.asList(
+        List<Point> availablePoints = new ArrayList<>(Arrays.asList(
                 new Point(x, y - 1), //up
                 new Point(x, y + 1), // down
                 new Point(x - 1, y), // left
                 new Point(x + 1, y) // right
         ));
-        return aviablePoints;
+        return availablePoints;
     }
 }
