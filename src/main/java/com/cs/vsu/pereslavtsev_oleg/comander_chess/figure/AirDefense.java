@@ -8,12 +8,24 @@ import java.util.List;
 
 public class AirDefense extends Figure {
 
+    private static class AirDefenseFabric implements FabricInterface {
+        @Override
+        public String getSymbol() {
+            return null;
+        }
+
+        @Override
+        public Figure createFigure(Point p, boolean isRed) {
+            return new AirDefense(p, isRed);
+        }
+    }
+
     public AirDefense(Point point, boolean isRed) {
         super(point, isRed);
     }
 
     @Override
-    public List<Point> getAviableMovements() {
+    public List<Point> getAvailableMovements() {
         int x = getPoint().getX();
         int y = getPoint().getY();
         List<Point> aviablePoints = new ArrayList<>(Arrays.asList(

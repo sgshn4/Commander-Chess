@@ -9,18 +9,21 @@ import java.util.List;
 public class Board {
 
     private List<Figure> figures;
+    private Figure[][] boardMatrix;
 
     public Board() {
-        figures = new ArrayList<>(Arrays.asList(new Infantryman(new Point(2, 7), true),
+        boardMatrix = new Figure[11][10];
+        figures = new ArrayList<>(Arrays.asList(
+                new Infantryman(new Point(2, 7), true),
                 new Infantryman(new Point(2, 4), false),
                 new Infantryman(new Point(10, 4), false),
                 new Infantryman(new Point(10, 7), true),
                 new Commander(new Point(0, 6), false),
                 new Commander(new Point(11, 6), true),
-                new Headquarters(new Point(11, 6), true),
-                new Headquarters(new Point(11, 6), true),
-                new Headquarters(new Point(11, 6), false),
-                new Headquarters(new Point(11, 6), false),
+                new Headquarter(new Point(11, 6), true),
+                new Headquarter(new Point(11, 6), true),
+                new Headquarter(new Point(11, 6), false),
+                new Headquarter(new Point(11, 6), false),
                 new Plane(new Point(11, 6), true),
                 new Plane(new Point(11, 6), true),
                 new Plane(new Point(11, 6), false),

@@ -6,6 +6,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Commander extends Figure {
+
+    private static class CommanderFabric implements FabricInterface {
+        @Override
+        public String getSymbol() {
+            return null;
+        }
+
+        @Override
+        public Figure createFigure(Point p, boolean isRed) {
+            return new Commander(p, isRed);
+        }
+    }
+
     public Commander(Point point, boolean isRed) {
         super(point, isRed);
     }
@@ -16,7 +29,7 @@ public class Commander extends Figure {
     }
 
     @Override
-    public List<Point> getAviableMovements() {
+    public List<Point> getAvailableMovements() {
         int x = getPoint().getX();
         int y = getPoint().getY();
         List<Point> aviablePoints = new ArrayList<>();

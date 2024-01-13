@@ -56,7 +56,7 @@ public class DrawPanel extends JPanel {
     private void drawFigures(Graphics2D g) {
         g.setFont(new Font("Times", Font.PLAIN, 16));
         for (Figure i : board.getFigures()) {
-            if (i.getisRed()) {
+            if (i.getIsRed()) {
                 g.setColor(Color.RED);
             } else {
                 g.setColor(Color.GREEN);

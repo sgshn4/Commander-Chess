@@ -8,6 +8,20 @@ import java.util.List;
 
 public class Infantryman extends Figure {
 
+    private static class InfantryFabric implements FabricInterface {
+        @Override
+        public String getSymbol() {
+            return null;
+        }
+
+        @Override
+        public Figure createFigure(Point p, boolean isRed) {
+            return new Infantryman(p, isRed);
+        }
+    }
+
+    public static final FabricInterface FACTORY = new InfantryFabric();
+
     public Infantryman(Point point, boolean isRed) {
         super(point, isRed);
     }
@@ -18,7 +32,7 @@ public class Infantryman extends Figure {
     }
 
     @Override
-    public List<Point> getAviableMovements() {
+    public List<Point> getAvailableMovements() {
         int x = getPoint().getX();
         int y = getPoint().getY();
         List<Point> aviablePoints = new ArrayList<>(Arrays.asList(

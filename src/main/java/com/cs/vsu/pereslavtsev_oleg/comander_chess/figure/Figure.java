@@ -16,7 +16,7 @@ public abstract class Figure implements FigureInterface {
     }
 
     @Override
-    public boolean getisRed() {
+    public boolean getIsRed() {
         return isRed;
     }
 
@@ -33,7 +33,7 @@ public abstract class Figure implements FigureInterface {
 
 
     @Override
-    public List<Point> getAviableMovements() {
+    public List<Point> getAvailableMovements() {
         return null;
     }
 }
