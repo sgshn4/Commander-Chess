@@ -10,7 +10,5 @@ public interface FigureInterface {
     public String getName();
     public List<Point> getAvailableMovements();
     public Point getPoint();
-    //create figure, get symbol
-    //фабрика фабрик для фигур
-    //матрица для фигур
+
 }

@@ -15,46 +15,21 @@ public class DrawPanel extends JPanel {
     private GameMap gameMap;
     private Board board;
 
-
     public DrawPanel() {
         gameMap = new GameMap(0, 0);
-        String[][] map =  {{"", "", "", "", "", "", "", "", "", ""},
-                {"", "", "", "", "", "", "", "", "", ""},
-                {"", "", "", "", "", "", "", "", "", ""},
-                {"", "", "", "", "", "", "", "", "", ""},
-                {"", "", "", "", "", "", "", "", "", ""},
-                {"", "", "", "", "", "", "", "", "", ""},
-                {"", "", "", "", "", "", "", "", "", ""},
-                {"", "", "", "", "", "", "", "", "", ""},
-                {"", "", "", "", "", "", "", "", "", ""},
-                {"", "", "", "", "", "", "", "", "", ""},
-                {"", "", "", "", "", "", "", "", "", ""}};
-        board = new Board(xxx);
-
-        addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                if (!Game.getIsSelected()) {
-                    for (int i = 0; i < board.getFigures().size(); i++) {
-                        if (Math.pow(board.getFigures().get(i).getPoint().getX() - e.getX(), 2) +
-                                Math.pow(board.getFigures().get(i).getPoint().getY() - e.getY(), 2) <
-                                Math.pow(30, 2)) {
-                            Game.setIsSelected(true);
-                            Game.setSelectedFigure(i);
-                            System.out.println(e.getX() + " " + e.getY());
-                            break;
-                        }
-                        System.out.println("null");
-                    }
-                } else {
-                    Figure temp = board.getFigures().get(Game.getSelectedFigure());
-                    board.getFigures().remove(Game.getSelectedFigure());
-                    board.editFigure(temp.setPoint(new Point(e.getX(), e.getY())), Game.getSelectedFigure());
-                    Game.setIsSelected(false);
-                }
-                super.mouseClicked(e);
-            }
-        });
+        String[][] map =  {{"", "", "", "", "", "", "c", "", "", "", ""},
+                            {"", "s", "", "", "p", "b", "", "b", "p", "", ""},
+                            {"", "", "", "a", "", "", "m", "", "", "a", ""},
+                            {"", "", "s", "", "ad", "t", "", "t", "ad", "", ""},
+                            {"", "", "i", "e", "", "", "mi", "", "", "e", "i"},
+                            {"", "", "", "", "", "w", "", "w", "", "", ""},
+                            {"", "", "", "", "", "W", "", "W", "", "", ""},
+                            {"", "", "I", "E", "", "", "MI", "", "", "E", "I"},
+                            {"", "", "S", "", "AD", "T", "", "T", "AD", "", ""},
+                            {"", "", "", "A", "", "", "M", "", "", "A", ""},
+                            {"", "S", "", "", "P", "B", "", "B", "P", "", ""},
+                            {"", "", "", "", "", "", "C", "", "", "", ""}};
+        board = new Board(map);
     }
 
     @Override
@@ -66,16 +41,16 @@ public class DrawPanel extends JPanel {
     }
 
     private void drawFigures(Graphics2D g) {
-        g.setFont(new Font("Times", Font.PLAIN, 16));
+        g.setFont(new Font("Times", Font.PLAIN, 12));
         for (Figure i : board.getFigures()) {
             if (i.getIsRed()) {
                 g.setColor(Color.RED);
             } else {
                 g.setColor(Color.GREEN);
             }
-            int x = 80 * i.getPoint().getX();
-            int y = 80 * i.getPoint().getY();
-            g.fillOval(x - 30, y - 30, 60, 60);
+            int x = 60 * i.getPoint().getX();
+            int y = 60 * i.getPoint().getY();
+            g.fillOval(x - 20, y - 20, 30, 30);
             g.setColor(Color.BLACK);
             g.drawString(i.getName(), x, y);
         }

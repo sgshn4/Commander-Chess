@@ -17,9 +17,9 @@ public class GameMap {
             for (int j = 0; j < 11; j++) {
                 if (i == 0 || i == 1 || (j == 5 && i != 0 && i != 1)) g.setPaint(Color.CYAN);
                 else g.setPaint(Color.WHITE);
-                g.fillRect(i * 80, j * 80, 80, 80);
+                g.fillRect(i * 60, j * 60, 60, 60);
                 g.setPaint(Color.BLACK);
-                g.drawRect(i * 80, j * 80, 80, 80);
+                g.drawRect(i * 60, j * 60, 60, 60);
             }
         }
     }

@@ -10,68 +10,56 @@ import java.util.Random;
 public class Board {
 
     private List<Figure> figures;
-    private Figure[][] boardMatrix;
-    private Random random;
 
     public Board(String[][] map) {
         figures = new ArrayList<>();
-        boardMatrix = new Figure[11][10];
-        random = new Random();
-        boolean isRed = false;
-        FabricInterface[] factories = new FabricInterface[] {
-                AirDefense.FACTORY,
-                Artillery.FACTORY,
-                Base.FACTORY,
-                Commander.FACTORY,
-                Engineer.FACTORY,
-                Infantryman.FACTORY,
-                Militiaman.FACTORY,
-                Missile.FACTORY,
-                Plane.FACTORY,
-                Ship.FACTORY,
-                Tank.FACTORY
+        FabricInterface[] factories = new FabricInterface[]{
+                AirDefense.FACTORY_BLUE,
+                AirDefense.FACTORY_RED,
+                Artillery.FACTORY_BLUE,
+                Artillery.FACTORY_RED,
+                Base.FACTORY_BLUE,
+                Base.FACTORY_RED,
+                Commander.FACTORY_BLUE,
+                Commander.FACTORY_RED,
+                Engineer.FACTORY_BLUE,
+                Engineer.FACTORY_RED,
+                Infantryman.FACTORY_BLUE,
+                Infantryman.FACTORY_RED,
+                Militiaman.FACTORY_BLUE,
+                Militiaman.FACTORY_RED,
+                Missile.FACTORY_BLUE,
+                Missile.FACTORY_RED,
+                Plane.FACTORY_BLUE,
+                Plane.FACTORY_RED,
+                Ship.FACTORY_BLUE,
+                Ship.FACTORY_RED,
+                Tank.FACTORY_BLUE,
+                Tank.FACTORY_RED,
+                Water.FACTORY_BLUE,
+                Water.FACTORY_RED
         };
 
-//        figures = new ArrayList<>(Arrays.asList(
-//                new Infantryman(new Point(2, 7), true),
-//                new Infantryman(new Point(2, 4), false),
-//                new Infantryman(new Point(10, 4), false),
-//                new Infantryman(new Point(10, 7), true),
-//                new Commander(new Point(0, 6), false),
-//                new Commander(new Point(11, 6), true),
-//                new Base(new Point(11, 6), true),
-//                new Base(new Point(11, 6), true),
-//                new Base(new Point(11, 6), false),
-//                new Base(new Point(11, 6), false),
-//                new Plane(new Point(11, 6), true),
-//                new Plane(new Point(11, 6), true),
-//                new Plane(new Point(11, 6), false),
-//                new Plane(new Point(11, 6), false),
-//                new Artillery(new Point(11, 6), true),
-//                new Artillery(new Point(11, 6), true),
-//                new Artillery(new Point(11, 6), false),
-//                new Artillery(new Point(11, 6), false),
-//                new AirDefense(new Point(11, 6), true),
-//                new AirDefense(new Point(11, 6), true),
-//                new AirDefense(new Point(11, 6), false),
-//                new AirDefense(new Point(11, 6), false),
-//                new Missile(new Point(11, 6), true),
-//                new Missile(new Point(11, 6), false),
-//                new Ship(new Point(11, 6), true),
-//                new Ship(new Point(11, 6), true),
-//                new Ship(new Point(11, 6), false),
-//                new Ship(new Point(11, 6), false),
-//                new Engineer(new Point(11, 6), true),
-//                new Engineer(new Point(11, 6), true),
-//                new Engineer(new Point(11, 6), false),
-//                new Engineer(new Point(11, 6), false),
-//                new Tank(new Point(11, 6), true),
-//                new Tank(new Point(11, 6), true),
-//                new Tank(new Point(11, 6), false),
-//                new Tank(new Point(11, 6), false),
-//                new Militiaman(new Point(11, 6), true),
-//                new Militiaman(new Point(11, 6), false)));
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map[i].length; j++) {
+                if (map[i][j] != null) {
+                    FabricInterface fabric = find(map[i][j], factories);
+                    if (fabric != null) {
+                        figures.add(fabric.createFigure(new Point(j, i)));
+                    }
+                }
+            }
+        }
     }
+
+    private static FabricInterface find(String name, FabricInterface[] fabricInterfaces) {
+        for (int i = 0; i < fabricInterfaces.length; i++) {
+            if (fabricInterfaces[i].getSymbol().equals(name)) return fabricInterfaces[i];
+        }
+        return null;
+    }
+
+
     public List<Figure> getFigures() {
         return figures;
     }
